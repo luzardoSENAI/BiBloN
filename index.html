@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblion - Controle Inteligente de Empréstimos</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Swiper.js for Carousel -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(30, 64, 175, 0.7) 0%, #FFFFFF 100%);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ===== Navbar ===== -->
+  <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-200">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-900">
+        <img src="favicon.png" alt="Logo Biblion" class="w-8 h-8">
+        Biblion
+      </a>
+
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="#funcionalidades" class="text-gray-600 hover:text-blue-600 transition-colors">Funcionalidades</a>
+        <a href="#depoimentos" class="text-gray-600 hover:text-blue-600 transition-colors">Depoimentos</a>
+        <a href="#precos" class="text-gray-600 hover:text-blue-600 transition-colors">Planos</a>
+      </nav>
+      <a href="#cta"
+        class="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 shadow-sm">
+        Login
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 hero-gradient">
+      <div class="container mx-auto px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            Biblioteca digital com controle inteligente de empréstimos.
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-10">
+            Com o Biblion, gerencie empréstimos de forma rápida, segura e moderna com IoT e integração em tempo real.
+          </p>
+        </div>
+
+        <!-- Carrossel -->
+        <div class="mt-16 md:mt-20 max-w-5xl mx-auto">
+          <div class="swiper-container rounded-2xl shadow-2xl border border-gray-200 overflow-hidden bg-gray-200">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <img src="bib1.png" alt="Gestão de empréstimos" class="w-full h-auto object-cover">
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <img src="bib2.png" alt="Organização de livros" class="w-full h-auto object-cover">
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <img src="bib3.png" alt="Alunos utilizando o sistema" class="w-full h-auto object-cover">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Funcionalidades ===== -->
+    <section id="funcionalidades" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tudo que sua biblioteca precisa.</h2>
+          <p class="text-gray-600 text-lg">Tecnologia IoT para simplificar o controle de empréstimos e devoluções de
+            livros.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Funcionalidade 1 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="bg-blue-100 text-blue-600 w-14 h-14 rounded-full flex items-center justify-center mb-5">
+              <i data-lucide="book-open" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Empréstimos Rápidos</h3>
+            <p class="text-gray-600">Cadastro automático de retirada de livros via tags NFC integradas ao sistema.</p>
+          </div>
+
+          <!-- Funcionalidade 2 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="bg-green-100 text-green-600 w-14 h-14 rounded-full flex items-center justify-center mb-5">
+              <i data-lucide="shield-check" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Segurança Garantida</h3>
+            <p class="text-gray-600">Controle de prazos e usuários com notificações automáticas para evitar atrasos.</p>
+          </div>
+
+          <!-- Funcionalidade 3 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div class="bg-yellow-100 text-yellow-600 w-14 h-14 rounded-full flex items-center justify-center mb-5">
+              <i data-lucide="chart-bar" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Relatórios Inteligentes</h3>
+            <p class="text-gray-600">Saiba quais livros são mais emprestados e acompanhe o desempenho da sua biblioteca.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA Final ===== -->
+    <section id="cta" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transforme sua biblioteca em um espaço
+            inteligente.</h2>
+          <p class="text-gray-600 text-lg mb-8">Chega de controles manuais. Com o Biblion, cada livro conta.</p>
+          <a href="#"
+            class="bg-blue-600 text-white font-bold px-10 py-4 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 shadow-lg text-lg">
+            Conheça o Biblion
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-6 py-12">
+      <div class="text-center">
+        <p class="text-gray-500">&copy; 2025 Biblion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
+</body>
+</html>
