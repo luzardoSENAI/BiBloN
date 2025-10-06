@@ -1,0 +1,114 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Relatórios</h1>
+    <small class="text-muted">Análises e métricas de uso da biblioteca</small>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6 col-md-12">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3 text-dark-purple">Uso de Livros por Gênero</h4>
+                <p class="text-muted">Visualize os gêneros mais populares na biblioteca.</p>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="genreUsageChart"></canvas>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-secondary btn-sm">Ver Detalhes</button>
+                    <button class="btn btn-outline-success btn-sm ms-2">Exportar Dados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3 text-dark-purple">Empréstimos por Período</h4>
+                <p class="text-muted">Acompanhe a quantidade de empréstimos ao longo do tempo.</p>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="loansOverTimeChart"></canvas>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-secondary btn-sm">Ver Detalhes</button>
+                    <button class="btn btn-outline-success btn-sm ms-2">Exportar Dados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3 text-dark-purple">Leitores com Mais Atrasos</h4>
+                <p class="text-muted">Identifique os leitores com maior número de atrasos.</p>
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Leitor</th>
+                                <th>Atrasos</th>
+                                <th>Multas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Enzo Medeiros</td>
+                                <td>3</td>
+                                <td>R$ 45,00</td>
+                            </tr>
+                            <tr>
+                                <td>Felipe Araújo</td>
+                                <td>2</td>
+                                <td>R$ 30,00</td>
+                            </tr>
+                            <tr>
+                                <td>Mariana Silva</td>
+                                <td>1</td>
+                                <td>R$ 15,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-secondary btn-sm">Ver Todos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3 text-dark-purple">Livros em Manutenção</h4>
+                <p class="text-muted">Acompanhe os livros que necessitam de reparo ou estão fora de circulação.</p>
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Livro</th>
+                                <th>Status</th>
+                                <th>Desde</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A Hipótese do Amor</td>
+                                <td><span class="badge bg-warning text-dark">Manutenção</span></td>
+                                <td>10/05/2025</td>
+                            </tr>
+                            <tr>
+                                <td>Dom Casmurro</td>
+                                <td><span class="badge bg-secondary">Reparo</span></td>
+                                <td>01/06/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-secondary btn-sm">Ver Todos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,91 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Cadastrar Livro</h1>
+    <small class="text-muted">Adicione novos livros ao acervo da biblioteca</small>
+</div>
+
+<div class="card shadow-sm border-0 p-4 mb-4">
+    <div class="card-body">
+        <h4 class="mb-4 text-dark-purple">Informações do Livro</h4>
+        <form id="addBookForm">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-5">
+                    <div class="d-flex flex-column align-items-center justify-content-center border rounded p-4 h-100 text-center" style="border-style: dashed !important;">
+                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                        <p class="text-muted mb-2">Clique para adicionar uma capa</p>
+                        <p class="text-muted mb-0"><small>PNG, JPG ou WEBP até 5MB</small></p>
+                        <input type="file" id="bookCoverUpload" class="d-none" accept="image/png, image/jpeg, image/webp">
+                        <label for="bookCoverUpload" class="btn btn-sm btn-outline-secondary mt-3">Selecionar Imagem</label>
+                        <img id="previewImage" src="" alt="Pré-visualização da Capa" class="img-fluid mt-3 rounded" style="max-height: 150px; display: none;">
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-7">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="bookTitle" class="form-label">Título do Livro</label>
+                            <input type="text" class="form-control form-control-lg" id="bookTitle" placeholder="Digite o Título do livro" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="bookAuthor" class="form-label">Autor</label>
+                            <input type="text" class="form-control form-control-lg" id="bookAuthor" placeholder="Digite o Autor do livro" required>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="bookEditor" class="form-label">Editora</label>
+                            <input type="text" class="form-control form-control-lg" id="bookEditor" placeholder="Digite a Editora do livro" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="bookGenre" class="form-label">Gênero</label>
+                            <select class="form-select form-select-lg" id="bookGenre" required>
+                                <option selected disabled value="">Selecione</option>
+                                <option>Ficção</option>
+                                <option>Fantasia</option>
+                                <option>Romance</option>
+                                <option>Terror</option>
+                                <option>Não Ficção</option>
+                                <option>Biografia</option>
+                                </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="publicationYear" class="form-label">Ano de Publicação</label>
+                            <input type="number" class="form-control form-control-lg" id="publicationYear" placeholder="Ano de Publ." min="1000" max="2099" required>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-3">
+                            <label for="numPages" class="form-label">Núm. de Páginas</label>
+                            <input type="number" class="form-control form-control-lg" id="numPages" placeholder="Páginas" min="1" required>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="bookDescription" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="bookDescription" rows="3" placeholder="Digite uma breve descrição ou sinopse do livro." required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row g-4 align-items-center">
+                <div class="col-md-4">
+                    <label for="bookISBN" class="form-label">ISBN</label>
+                    <input type="text" class="form-control form-control-lg" id="bookISBN" placeholder="Ex: 978123456789" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="bookLocation" class="form-label">Localização na Biblioteca</label>
+                    <input type="text" class="form-control form-control-lg" id="bookLocation" placeholder="Ex: Estante A, Prateleira 3" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="bookQuantity" class="form-label">Quantidade</label>
+                    <input type="number" class="form-control form-control-lg" id="bookQuantity" value="1" min="1" required>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-secondary btn-lg" data-action="cancel-add-book">Cancelar</button>
+                <button type="submit" class="btn btn-primary btn-lg custom-btn-primary"><i class="fas fa-save me-2"></i> Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,433 @@
+/* Cores personalizadas (baseadas no vídeo) */
+:root {
+    --dark-purple: #340E1B; /* Cor principal de fundo e elementos */
+    --light-gray: #F8F9FA;  /* Fundo de cards, painel direito */
+    --text-color: #343a40;  /* Cor padrão de texto */
+    --accent-color: #340E1B; /* Uma variação do roxo para detalhes/hover */
+    --custom-primary: #340E1B; /* Cor primária para botões e links */
+    --custom-primary-hover: #671D2F; /* Cor primária para hover */
+}
+
+.a {
+    align-items: center;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #EFEFEF;
+    color: var(--text-color);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: var(--dark-purple);
+    color: #fff;
+    transition: all 0.3s ease;
+    height: 100vh;
+    position: sticky; /* Sticky para desktop, fixed para mobile */
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+#sidebar.collapsed {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#sidebar.collapsed .d-lg-inline {
+    display: none !important;
+}
+
+#sidebar.collapsed .sidebar-header img {
+    display: none !important;
+}
+
+#sidebar.collapsed .sidebar-header h3 {
+    display: none !important;
+}
+
+#sidebar .list-unstyled { /* Esta regra é essencial para remover os marcadores de lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar .nav-link {
+    color: #fff;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center; /* Para alinhar verticalmente */
+}
+
+#sidebar .nav-link:hover {
+    background-color: var(--accent-color);
+}
+
+#sidebar .nav-link i {
+    font-size: 1.2rem;
+    margin-right: 10px; /* Espaço entre ícone e texto */
+}
+
+#sidebar.collapsed .nav-link i {
+    margin-right: 0; /* Remove a margem quando colapsado */
+    justify-content: center; /* Centraliza o ícone */
+    width: 100%; /* Ocupa a largura total do item de menu colapsado */
+}
+
+/* Page Content */
+#content {
+    flex-grow: 1;
+    transition: all 0.3s;
+    padding: 0; /* Por padrão, o main-content não tem padding, as páginas internas o definem */
+}
+
+/* Login/Register Page Specific Styles */
+.left-panel {
+    background-color: var(--dark-purple);
+    color: white;
+}
+
+.right-panel {
+    background-color: white;
+}
+
+.form-control-lg {
+    border-radius: 0.5rem;
+}
+
+.custom-btn-primary {
+    background-color: var(--custom-primary);
+    border-color: var(--custom-primary);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.custom-btn-primary:hover {
+    background-color: var(--custom-primary-hover);
+    border-color: var(--custom-primary-hover);
+}
+
+.btn-outline-light {
+    border-color: white;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: var(--dark-purple);
+}
+
+.text-dark-purple {
+    color: var(--dark-purple);
+}
+
+.social-icons .btn {
+    border: 1px solid #ccc;
+    color: var(--dark-purple);
+}
+
+.social-icons .btn:hover {
+    background-color: var(--light-gray);
+}
+
+/* Ajustes para o layout de login */
+@media (max-width: 767.98px) {
+    .left-panel, .right-panel {
+        min-height: auto;
+    }
+    .left-panel {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .right-panel {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Media Queries para Responsividade da Sidebar */
+@media (max-width: 991.98px) {
+    #sidebar {
+        margin-left: -250px; /* Esconde a sidebar por padrão em mobile */
+        position: fixed; /* Fixed para deslizar por cima do conteúdo */
+        height: 100vh;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    #sidebar.active { /* Mostra a sidebar quando 'active' em mobile */
+        margin-left: 0;
+    }
+    #content {
+        width: 100%; /* Conteúdo ocupa toda a largura em mobile */
+        margin-left: 0;
+    }
+    #sidebarToggle { /* Botão dentro da sidebar para abrir/fechar em mobile */
+        display: block !important;
+        position: absolute; 
+        top: 15px;
+        right: 15px;
+        z-index: 1001; 
+    }
+    #sidebar.active .d-lg-inline { /* Exibe o texto quando a sidebar está ativa em mobile */
+        display: inline !important; 
+    }
+    #sidebar.active .sidebar-header img,
+    #sidebar.active .sidebar-header h3 {
+        display: block !important;
+    }
+    /* No mobile, a sidebar não deve "colapsar" para ícones, ela deve apenas aparecer/desaparecer */
+    #sidebar.collapsed { 
+        min-width: 250px;
+        max-width: 250px;
+        text-align: left;
+    }
+    /* Ocultar o botão de colapso da sidebar do cabeçalho em mobile, pois ele é para desktop */
+    #sidebarCollapse {
+        display: none !important; 
+    }
+}
+
+/* Dashboard specific styles */
+.card {
+    border-radius: 0.75rem;
+}
+
+.text-primary-light {
+    color: #a35073;
+}
+
+.action-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-color: var(--custom-primary);
+}
+
+.action-card i {
+    color: var(--custom-primary);
+}
+
+.chart-container {
+    position: relative; /* Para Chart.js ser responsivo */
+    height: 250px; /* Altura controlada pelo container */
+}
+
+/* Para os placeholders dos gráficos (se ainda existirem) */
+.chart-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border-color: #eee;
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+/* CLASSE CRÍTICA PARA VISIBILIDADE GLOBAL: Controla sidebar, navbar e footer */
+/* Esconde sidebar, navbar e footer quando o corpo NÃO tem a classe 'logged-in' */
+body:not(.logged-in) #sidebar,
+body:not(.logged-in) .navbar,
+body:not(.logged-in) footer {
+    display: none !important;
+}
+
+/* Mostra sidebar, navbar e footer quando o corpo TEM a classe 'logged-in' */
+body.logged-in #sidebar,
+body.logged-in .navbar,
+body.logged-in footer {
+    display: flex !important; /* Usamos flex para eles se comportarem bem em colunas ou linhas */
+}
+
+/* Ajustes para o main-content quando não logado (tela de login/cadastro) */
+body:not(.logged-in) #main-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 !important; /* Remove o padding para que as telas de login/cadastro ocupem toda a área */
+}
+
+body:not(.logged-in) .wrapper {
+    width: 100%;
+}
+
+/* Adiciona padding ao main-content SOMENTE QUANDO LOGADO para dar espaço */
+body.logged-in #main-content {
+    padding: 1.5rem !important; /* Ajuste o padding conforme desejar para o dashboard e outras páginas internas */
+}
+
+/* Biblioteca Page Styles */
+.book-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px; /* Altura fixa para as capas */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.book-card .card-body {
+    padding: 1rem;
+    height: 120px; /* Altura fixa para o corpo do card, para consistência */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card .book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay escuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Escondido por padrão */
+    transition: opacity 0.3s ease;
+}
+
+.book-card:hover .book-overlay {
+    opacity: 1; /* Aparece no hover */
+}
+
+.book-card .view-details-btn {
+    opacity: 0; /* Esconde o botão por padrão */
+    transform: translateY(20px); /* Começa ligeiramente abaixo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.book-card:hover .view-details-btn {
+    opacity: 1; /* Mostra o botão no hover */
+    transform: translateY(0); /* Desliza para a posição original */
+}
+
+/* Estilos para os botões de filtro na página da biblioteca */
+.btn-outline-primary {
+    color: var(--custom-primary);
+    border-color: var(--custom-primary);
+}
+.btn-outline-primary:hover {
+    background-color: var(--custom-primary);
+    color: white;
+}
+.btn-outline-secondary {
+    color: var(--text-color);
+    border-color: #dee2e6;
+}
+.btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    color: var(--text-color);
+}
+.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+    background-color: var(--custom-primary);
+}
+
+
+/* Book Details Page Styles */
+.rounded {
+    border-radius: 0.75rem !important; /* Arredondamento para imagens e cards */
+}
+
+/* Estilos gerais para tabelas */
+.table {
+    --bs-table-bg: #fff; /* Fundo branco para tabelas dentro de cards */
+    border-radius: 0.5rem;
+    overflow: hidden; /* Para garantir que bordas arredondadas funcionem com overflow */
+    border-collapse: separate; /* Permite bordas arredondadas na tabela */
+    border-spacing: 0; /* Remove espaçamento entre células */
+}
+
+.table thead {
+    background-color: var(--light-gray); /* Fundo cinza claro para cabeçalho da tabela */
+}
+
+.table th, .table td {
+    padding: 0.75rem 1rem; /* Espaçamento interno */
+}
+
+.table-hover tbody tr:hover {
+    --bs-table-hover-bg: #f5f5f5; /* Cor de hover mais suave */
+}
+
+/* Badges de Status na tabela */
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+}
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+.badge.bg-info { /* Para status "Concluído" ou "Ativo" em algumas tabelas */
+    background-color: #17a2b8 !important;
+    color: #fff !important; /* Certifica que o texto seja branco */
+}
+.badge.bg-primary { /* Para o badge de contagem de empréstimos ativos na aba */
+    background-color: var(--custom-primary) !important;
+}
+.badge.bg-secondary.text-dark { /* Para o badge de status 'Manutenção' */
+    background-color: #6c757d !important;
+    color: #fff !important; /* Garante que o texto seja branco em fundos escuros */
+}
+
+
+/* Botões menores nas tabelas */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.3rem;
+}
+
+/* Estilos para o input de arquivo na página de cadastro de livro */
+input[type="file"] {
+    cursor: pointer;
+}
+
+/* Estilo para a borda pontilhada do upload de imagem no cadastro de livro */
+.border.rounded.p-4[style*="dashed"] {
+    border: 2px dashed #ccc !important;
+}

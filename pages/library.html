@@ -1,0 +1,198 @@
+<link rel="stylesheet" href="style.css">
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Biblioteca</h1>
+    <small class="text-muted">Gerencie o acervo de livros da sua biblioteca</small>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8 col-lg-9">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg" placeholder="Buscar livros..." aria-label="Buscar livros">
+            <button class="btn btn-primary custom-btn-primary" type="button"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3 d-flex mt-3 mt-md-0 justify-content-end">
+        <div class="dropdown me-2">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownCategories" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+                <li><a class="dropdown-item" href="#">Ficção</a></li>
+                <li><a class="dropdown-item" href="#">Não Ficção</a></li>
+                <li><a class="dropdown-item" href="#">Fantasia</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Ver Todas</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownFilter" data-bs-toggle="dropdown" aria-expanded="false">
+                Todos
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
+                <li><a class="dropdown-item" href="#" data-filter="available">Disponíveis</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="lent">Emprestados</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="maintenance">Manutenção</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn" data-filter="all">Todos</button>
+    <button class="btn card action-card py-3 d-block text-decoration-none " data-filter="available">Disponíveis</button>
+    <button class="btn card action-card py-3 d-block text-decoration-none" data-filter="lent">Emprestados</button>
+    <button class="btn card action-card py-3 d-block text-decoration-none" data-filter="maintenance">Manutenção</button>
+</div>
+
+
+<h3 class="mb-3">Livros mais Lidos</h3>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="1">
+            <img src="https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg" class="card-img-top" alt="Capa do Livro Harry Potter" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Harry Potter e a Pedra Filosofal</h5>
+                <p class="card-text text-muted"><small>J.K. Rowling</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 9785436253</small>
+                </div>
+            </div>
+            <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="2">
+            <img src="https://m.media-amazon.com/images/I/81+AcvclARL._UF894,1000_QL80_.jpg" class="card-img-top" alt="Capa do Livro A Cinco Passos de Você" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">A Cinco Passos de Você</h5>
+                <p class="card-text text-muted"><small>Rachael Lippincott</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">Emprestado</span>
+                    <small class="text-muted">ISBN: 2098497853</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="3">
+            <img src="https://m.media-amazon.com/images/I/81LTEfXYgcL.jpg" class="card-img-top" alt="Capa do Livro A Hipótese do Amor" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">A Hipótese do Amor</h5>
+                <p class="card-text text-muted"><small>Ali Hazelwood</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-secondary">Manutenção</span>
+                    <small class="text-muted">ISBN: 2854739078</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="4">
+            <img src="https://m.media-amazon.com/images/I/9112cWOV-OL._UF894,1000_QL80_.jpg" class="card-img-top" alt="Capa do Livro É assim que acaba" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">É assim que acaba</h5>
+                <p class="card-text text-muted"><small>Colleen Hoover</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 3456382456</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mb-3">Livros que talvez você goste</h3>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="5">
+            <img src="https://m.media-amazon.com/images/I/81jbivNEVML.jpg" class="card-img-top" alt="Capa do Livro Harry Potter" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Harry Potter e a Câmara Secreta</h5>
+                <p class="card-text text-muted"><small>J.K. Rowling</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 20000437863</small>
+                </div>
+            </div>
+            <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="6">
+            <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Capa do Livro O Pequeno Príncipe" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">O Pequeno Príncipe</h5>
+                <p class="card-text text-muted"><small>Antoine de Saint-Exupéry</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 0553748236</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="7">
+            <img src="https://m.media-amazon.com/images/I/A1z7ywkr2wL.jpg" class="card-img-top" alt="Capa do Livro The Mamba Mentality" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">The Mamba Mentality: How I Play</h5>
+                <p class="card-text text-muted"><small>Kobe Bryant</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 3854739078</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 book-card" data-book-id="8">
+            <img src="https://m.media-amazon.com/images/I/71JPLdjJeqL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Capa do Livro Holy Cow - Uma Fábula Animal" style="height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Holy Cow - Uma Fábula Animal</h5>
+                <p class="card-text text-muted"><small>David Duchovny</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Disponível</span>
+                    <small class="text-muted">ISBN: 3456382456</small>
+                </div>
+            </div>
+             <div class="book-overlay d-flex align-items-center justify-content-center">
+                <button class="btn btn-primary custom-btn-primary btn-sm view-details-btn">Ver Detalhes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Paginação">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Próximo</a>
+        </li>
+    </ul>
+</nav>

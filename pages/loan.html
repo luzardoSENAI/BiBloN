@@ -1,0 +1,210 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Gerenciar Empréstimos</h1>
+    <small class="text-muted">Realize novos empréstimos e gerencie devoluções</small>
+</div>
+
+<ul class="nav nav-tabs mb-4" id="loanTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="new-loan-tab" data-bs-toggle="tab" data-bs-target="#new-loan" type="button" role="tab" aria-controls="new-loan" aria-selected="true">Novo Empréstimo</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="returns-tab" data-bs-toggle="tab" data-bs-target="#returns" type="button" role="tab" aria-controls="returns" aria-selected="false">Devoluções</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="active-loans-tab" data-bs-toggle="tab" data-bs-target="#active-loans" type="button" role="tab" aria-controls="active-loans" aria-selected="false">Empréstimos Ativos <span class="badge bg-primary ms-2">4</span></button>
+    </li>
+</ul>
+
+<div class="tab-content" id="loanTabsContent">
+    <div class="tab-pane fade show active" id="new-loan" role="tabpanel" aria-labelledby="new-loan-tab">
+        <div class="card shadow-sm border-0 p-4">
+            <div class="card-body">
+                <h4 class="mb-4 text-dark-purple">Informações do Empréstimo</h4>
+                <form id="newLoanForm">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="loanReader" class="form-label">Leitor Selecionado</label>
+                            <select class="form-select form-select-lg" id="loanReader" required>
+                                <option selected disabled value="">Selecione um leitor</option>
+                                <option>Nara Flávia (aluno)</option>
+                                <option>Gustavo Santos (leitor)</option>
+                                <option>Gabriel Vieira (bibliotecário)</option>
+                                </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="returnDate" class="form-label">Data de Devolução Prevista</label>
+                            <input type="date" class="form-control form-control-lg" id="returnDate" required>
+                            <small class="text-muted">Ex: 25/05/2025</small>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="bookSearchISBN" class="form-label">Buscar Livro</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" id="bookSearchISBN" placeholder="Digite o Título ou ISBN do livro" required>
+                                <button class="btn btn-primary custom-btn-primary" type="button"><i class="fas fa-search"></i> Buscar</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="selectedBook" class="form-label">Livro Selecionado</label>
+                            <select class="form-select form-select-lg" id="selectedBook" required>
+                                <option selected disabled value="">Selecione um livro</option>
+                                <option>Harry Potter e a Pedra Filosofal</option>
+                                <option>O Pequeno Príncipe</option>
+                                </select>
+                            <small class="text-muted">Preenchimento automático</small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loanDescription" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="loanDescription" rows="3" placeholder="Digite uma breve descrição ou sinopse do livro."></textarea>
+                    </div>
+                    
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="button" class="btn btn-secondary btn-lg" data-action="cancel-loan">Cancelar</button>
+                        <button type="submit" class="btn btn-primary btn-lg custom-btn-primary"><i class="fas fa-plus-circle me-2"></i> Registrar Empréstimo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="returns" role="tabpanel" aria-labelledby="returns-tab">
+        <div class="d-flex justify-content-end mb-3">
+            <div class="input-group" style="max-width: 300px;">
+                <input type="text" class="form-control" placeholder="Buscar empréstimo...">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Livro</th>
+                        <th>Leitor</th>
+                        <th>Status</th>
+                        <th>Data de Devolução</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Dom Casmurro</td>
+                        <td>Gabriel Vieira</td>
+                        <td><span class="badge bg-success">Devolvido</span></td>
+                        <td>22/04/25</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-success disabled"><i class="fas fa-check"></i> Devolver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>O Cortiço - Aluísio Azevedo</td>
+                        <td>Gustavo Santos</td>
+                        <td><span class="badge bg-danger">Em Atraso</span></td>
+                        <td>01/04/25</td>
+                        <td>
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Devolver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Memórias Póstumas de Brás Cubas</td>
+                        <td>Gustavo Erick</td>
+                        <td><span class="badge bg-warning text-dark">Devolve Hoje</span></td>
+                        <td>08/05/25</td>
+                        <td>
+                            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Devolver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>A Arte do Guerra - Sun Tzu</td>
+                        <td>Kaio Costa</td>
+                        <td><span class="badge bg-success">Devolvido</span></td>
+                        <td>07/05/25</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-success disabled"><i class="fas fa-check"></i> Devolver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="active-loans" role="tabpanel" aria-labelledby="active-loans-tab">
+        <div class="d-flex justify-content-end mb-3">
+            <div class="input-group" style="max-width: 300px;">
+                <input type="text" class="form-control" placeholder="Buscar empréstimo...">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Leitor</th>
+                        <th>Livro</th>
+                        <th>Data de Empréstimo</th>
+                        <th>Data de Devolução</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#5001</td>
+                        <td>Nara Flávia</td>
+                        <td>KNY Vol 1</td>
+                        <td>15/04/2025</td>
+                        <td>29/04/2025</td>
+                        <td><span class="badge bg-success">14 dias restantes</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-sync-alt"></i> Prorrogar</button>
+                            <button class="btn btn-sm btn-primary custom-btn-primary"><i class="fas fa-exchange-alt"></i> Devolver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#5002</td>
+                        <td>Nara Flávia</td>
+                        <td>KNY Vol 1</td>
+                        <td>15/04/2025</td>
+                        <td>29/04/2025</td>
+                        <td><span class="badge bg-success">14 dias restantes</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-sync-alt"></i> Prorrogar</button>
+                            <button class="btn btn-sm btn-primary custom-btn-primary"><i class="fas fa-exchange-alt"></i> Devolver</button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>#5003</td>
+                        <td>Nara Flávia</td>
+                        <td>KNY Vol 1</td>
+                        <td>15/04/2025</td>
+                        <td>29/04/2025</td>
+                        <td><span class="badge bg-success">14 dias restantes</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-sync-alt"></i> Prorrogar</button>
+                            <button class="btn btn-sm btn-primary custom-btn-primary"><i class="fas fa-exchange-alt"></i> Devolver</button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>#5004</td>
+                        <td>Nara Flávia</td>
+                        <td>KNY Vol 1</td>
+                        <td>15/04/2025</td>
+                        <td>29/04/2025</td>
+                        <td><span class="badge bg-success">14 dias restantes</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-1"><i class="fas fa-sync-alt"></i> Prorrogar</button>
+                            <button class="btn btn-sm btn-primary custom-btn-primary"><i class="fas fa-exchange-alt"></i> Devolver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

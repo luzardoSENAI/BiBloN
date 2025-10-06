@@ -1,0 +1,214 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Gerenciar Reservas</h1>
+    <small class="text-muted">Gerencie as reservas de livros realizadas pelos leitores</small>
+</div>
+
+<ul class="nav nav-tabs mb-4" id="reservationTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="active-reservations-tab" data-bs-toggle="tab" data-bs-target="#active-reservations" type="button" role="tab" aria-controls="active-reservations" aria-selected="true">Reservas Ativas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pending-reservations-tab" data-bs-toggle="tab" data-bs-target="#pending-reservations" type="button" role="tab" aria-controls="pending-reservations" aria-selected="false">Pendentes</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="history-reservations-tab" data-bs-toggle="tab" data-bs-target="#history-reservations" type="button" role="tab" aria-controls="history-reservations" aria-selected="false">Histórico</button>
+    </li>
+</ul>
+
+<div class="tab-content" id="reservationTabsContent">
+    <div class="tab-pane fade show active" id="active-reservations" role="tabpanel" aria-labelledby="active-reservations-tab">
+        <div class="d-flex justify-content-between mb-3 flex-wrap">
+            <div class="input-group mb-2 mb-md-0 me-md-2" style="max-width: 300px;">
+                <input type="text" class="form-control" placeholder="Buscar por leitor, livro ou data...">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="d-flex gap-2">
+                <select class="form-select" style="max-width: 150px;">
+                    <option selected>Leitor</option>
+                    <option>Aluno</option>
+                    <option>Professor</option>
+                </select>
+                <button class="btn btn-primary custom-btn-primary"><i class="fas fa-plus-circle me-2"></i> Nova Reserva</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Leitor</th>
+                        <th>Livro</th>
+                        <th>Data da Reserva</th>
+                        <th>Validade</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1247</td>
+                        <td>Nara Flávia</td>
+                        <td>Gustavo Santos</td>
+                        <td>KNY Vol 1</td>
+                        <td>28/04/2025</td>
+                        <td>31/10/2025</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1248</td>
+                        <td>Gustavo Santos</td>
+                        <td>A Cinco Passos de Você</td>
+                        <td>21/04/2025</td>
+                        <td>30/09/2025</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1249</td>
+                        <td>Enzo Medeiros</td>
+                        <td>Harry Potter</td>
+                        <td>02/05/2025</td>
+                        <td>04/11/2025</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1250</td>
+                        <td>Felipe Araújo</td>
+                        <td>O Pequeno Príncipe</td>
+                        <td>05/05/2025</td>
+                        <td>06/11/2025</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="pending-reservations" role="tabpanel" aria-labelledby="pending-reservations-tab">
+        <div class="d-flex justify-content-between mb-3 flex-wrap">
+            <div class="input-group mb-2 mb-md-0 me-md-2" style="max-width: 300px;">
+                <input type="text" class="form-control" placeholder="Buscar por leitor, livro ou data...">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="d-flex gap-2">
+                <select class="form-select" style="max-width: 150px;">
+                    <option selected>Leitor</option>
+                    <option>Aluno</option>
+                    <option>Professor</option>
+                </select>
+                <button class="btn btn-primary custom-btn-primary"><i class="fas fa-plus-circle me-2"></i> Nova Reserva</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Leitor</th>
+                        <th>Livro</th>
+                        <th>Data da Reserva</th>
+                        <th>Validade</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1251</td>
+                        <td>Mariana Silva</td>
+                        <td>Cem Anos de Solidão</td>
+                        <td>10/06/2025</td>
+                        <td>Indefinida</td>
+                        <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1252</td>
+                        <td>Carlos Alberto</td>
+                        <td>A Revolução dos Bichos</td>
+                        <td>12/06/2025</td>
+                        <td>Indefinida</td>
+                        <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="history-reservations" role="tabpanel" aria-labelledby="history-reservations-tab">
+        <div class="d-flex justify-content-between mb-3 flex-wrap">
+            <div class="input-group mb-2 mb-md-0 me-md-2" style="max-width: 300px;">
+                <input type="text" class="form-control" placeholder="Buscar por leitor, livro ou data...">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="d-flex gap-2">
+                <select class="form-select" style="max-width: 150px;">
+                    <option selected>Leitor</option>
+                    <option>Aluno</option>
+                    <option>Professor</option>
+                </select>
+                <button class="btn btn-primary custom-btn-primary disabled"><i class="fas fa-plus-circle me-2"></i> Nova Reserva</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Leitor</th>
+                        <th>Livro</th>
+                        <th>Data da Reserva</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1240</td>
+                        <td>Maria Clara</td>
+                        <td>1984</td>
+                        <td>01/03/2025</td>
+                        <td><span class="badge bg-info text-dark">Concluído</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1 disabled"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger disabled"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1241</td>
+                        <td>João Pedro</td>
+                        <td>Crime e Castigo</td>
+                        <td>05/03/2025</td>
+                        <td><span class="badge bg-danger">Cancelado</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info me-1 disabled"><i class="fas fa-eye"></i></button>
+                            <button class="btn btn-sm btn-danger disabled"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

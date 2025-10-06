@@ -1,0 +1,193 @@
+<h1 class="mb-4">Dashboard</h1>
+
+<div class="row g-4 mb-4">
+    <div class="col-xl-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title text-muted text-uppercase mb-0">Total de Livros</h5>
+                    <i class="fas fa-book fa-2x text-primary-light"></i>
+                </div>
+                <div class="h2 mb-0">1.946</div>
+                <p class="text-muted mb-0"><small>+12% desde o último mês</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title text-muted text-uppercase mb-0">Empréstimos Ativos</h5>
+                    <i class="fas fa-handshake fa-2x text-primary-light"></i>
+                </div>
+                <div class="h2 mb-0">894</div>
+                <p class="text-muted mb-0"><small>-3% desde o último mês</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title text-muted text-uppercase mb-0">Total de Cadastros</h5>
+                    <i class="fas fa-users fa-2x text-primary-light"></i>
+                </div>
+                <div class="h2 mb-0">999</div>
+                <p class="text-muted mb-0"><small>+12% desde o último mês</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title text-muted text-uppercase mb-0">Total de Empréstimos</h5>
+                    <i class="fas fa-history fa-2x text-primary-light"></i>
+                </div>
+                <div class="h2 mb-0">1444</div>
+                <p class="text-muted mb-0"><small>+1% desde o último mês</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+        <h4 class="mb-3">Ações Rápidas</h4>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                <a href="#" data-page="loan" class="card action-card py-3 d-block text-decoration-none">
+                    <div class="card-body">
+                        <i class="fas fa-handshake fa-3x mb-2 text-dark-purple"></i>
+                        <p class="card-text mb-0 text-dark-purple fw-bold">Novo Empréstimo</p>
+                        <small class="text-muted">Registrar empréstimo</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                <a href="#" data-page="add-book" class="card action-card py-3 d-block text-decoration-none">
+                    <div class="card-body">
+                        <i class="fas fa-plus-square fa-3x mb-2 text-dark-purple"></i>
+                        <p class="card-text mb-0 text-dark-purple fw-bold">Cadastrar Livro</p>
+                        <small class="text-muted">Adicionar ao acervo</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3 mb-md-0">
+                <a href="#" data-page="readers" class="card action-card py-3 d-block text-decoration-none">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x mb-2 text-dark-purple"></i>
+                        <p class="card-text mb-0 text-dark-purple fw-bold">Usuários</p>
+                        <small class="text-muted">Registrar usuários</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" data-page="reports" class="card action-card py-3 d-block text-decoration-none">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line fa-3x mb-2 text-dark-purple"></i>
+                        <p class="card-text mb-0 text-dark-purple fw-bold">Relatórios</p>
+                        <small class="text-muted">Ver todos os relatórios</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Livros mais Emprestados</h4>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="mostLentBooksChart"></canvas>
+                </div>
+                 <ul class="list-group list-group-flush mt-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KNY Vol 1
+                        <span class="badge bg-secondary rounded-pill">78</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        A Arte do Guerra
+                        <span class="badge bg-secondary rounded-pill">65</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Harry Potter
+                        <span class="badge bg-secondary rounded-pill">48</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Alertas e Notificações</h4>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fas fa-exclamation-triangle text-danger me-2"></i> Livros com Atraso Crítico
+                            <p class="mb-0 text-muted"><small>5 livros com mais de 30 dias de atraso!</small></p>
+                        </div>
+                        <button class="btn btn-outline-danger btn-sm">Detalhes</button>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fas fa-hourglass-half text-warning me-2"></i> Devoluções Próximas
+                            <p class="mb-0 text-muted"><small>12 livros vencem hoje!</small></p>
+                        </div>
+                        <button class="btn btn-outline-warning btn-sm">Notificar</button>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fas fa-dollar-sign text-info me-2"></i> Multas Não Pagas
+                            <p class="mb-0 text-muted"><small>R$ 245,00 em multas pendentes</small></p>
+                        </div>
+                        <button class="btn btn-outline-info btn-sm">Cobrar</button>
+                    </div>
+                     <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fas fa-bookmark text-success me-2"></i> Livros Reservados
+                            <p class="mb-0 text-muted"><small>3 livros aguardando ser reservados.</small></p>
+                        </div>
+                        <button class="btn btn-outline-success btn-sm">Conferir</button>
+                    </div>
+                     <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fas fa-user-times text-secondary me-2"></i> Usuários Inativos
+                            <p class="mb-0 text-muted"><small>10 usuários estão a mais de 30 dias sem login.</small></p>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm">Conferir</button>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="#" class="btn btn-link text-dark-purple">Ver todas as notificações</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Tendências de Empréstimo</h4>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="loanTrendsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Usuários Mais Ativos</h4>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="activeUsersChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

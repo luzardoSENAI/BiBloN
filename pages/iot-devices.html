@@ -1,0 +1,103 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Dispositivos IoT</h1>
+    <small class="text-muted">Gerencie e monitore os dispositivos de Internet das Coisas da biblioteca</small>
+</div>
+
+<div class="d-flex justify-content-between mb-3 flex-wrap">
+    <div class="input-group mb-2 mb-md-0 me-md-2" style="max-width: 300px;">
+        <input type="text" class="form-control" placeholder="Buscar dispositivo...">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="d-flex gap-2">
+        <select class="form-select" style="max-width: 180px;">
+            <option selected>Todos os Tipos</option>
+            <option>Leitor RFID</option>
+            <option>Leitor QR Code</option>
+            <option>Sensor de Prateleira</option>
+        </select>
+        <button class="btn btn-primary custom-btn-primary"><i class="fas fa-plus-circle me-2"></i> Adicionar Dispositivo</button>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Localização</th>
+                <th>Status</th>
+                <th>Última Atividade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#DEV001</td>
+                <td>Entrada Principal</td>
+                <td>Leitor RFID</td>
+                <td>Recepção</td>
+                <td><span class="badge bg-success">Online</span></td>
+                <td>24/06/2025 15:00</td>
+                <td>
+                    <button class="btn btn-sm btn-info me-1" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-sm btn-warning me-1" title="Editar Dispositivo"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-danger" title="Remover Dispositivo"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>#DEV002</td>
+                <td>Portão de Saída</td>
+                <td>Leitor QR Code</td>
+                <td>Portaria</td>
+                <td><span class="badge bg-danger">Offline</span></td>
+                <td>24/06/2025 10:00</td>
+                <td>
+                    <button class="btn btn-sm btn-info me-1" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-sm btn-warning me-1" title="Editar Dispositivo"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-danger" title="Remover Dispositivo"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>#DEV003</td>
+                <td>Estante de Ficção</td>
+                <td>Sensor de Prateleira</td>
+                <td>Setor A, Prateleira 2</td>
+                <td><span class="badge bg-success">Online</span></td>
+                <td>24/06/2025 16:30</td>
+                <td>
+                    <button class="btn btn-sm btn-info me-1" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-sm btn-warning me-1" title="Editar Dispositivo"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-danger" title="Remover Dispositivo"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>#DEV004</td>
+                <td>Balcão de Empréstimos</td>
+                <td>Leitor RFID</td>
+                <td>Atendimento</td>
+                <td><span class="badge bg-warning text-dark">Manutenção</span></td>
+                <td>23/06/2025 18:00</td>
+                <td>
+                    <button class="btn btn-sm btn-info me-1" title="Ver Detalhes"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-sm btn-warning me-1" title="Editar Dispositivo"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-danger" title="Remover Dispositivo"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Paginação de Dispositivos IoT">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Próximo</a>
+        </li>
+    </ul>
+</nav>
